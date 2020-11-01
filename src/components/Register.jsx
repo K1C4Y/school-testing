@@ -4,16 +4,20 @@ import FormGroup from 'react-bootstrap/FormGroup';
 import FormLabel from 'react-bootstrap/FormLabel';
 import Button from 'react-bootstrap/Button';
 
-class Login extends Component{
+class Register extends Component{
 	render(){
 
 		return (
-			<div className='Login'>
+			<div className='Register'>
 				<FormGroup>
 					<FormLabel>User name</FormLabel>	
 						<FormControl type='text' placeholder='Enter email'/>
 					<FormLabel>User password</FormLabel>	
 						<FormControl type='password' placeholder='Enter email'/>
+					<FormLabel>Reapeat password</FormLabel>	
+						<FormControl type='password' placeholder='Enter email'/>
+					<FormLabel>Email</FormLabel>	
+						<FormControl type='email' placeholder='Enter email'/>
 					<Button type='submit'>Submit</Button>
 				</FormGroup>
 			</div>	
@@ -22,4 +26,4 @@ class Login extends Component{
 }
 
 
-export default Login;
+export default Register;
