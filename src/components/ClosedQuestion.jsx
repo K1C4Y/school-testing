@@ -16,9 +16,10 @@ const ClosedQuestion = () => {
 	}
 
 	const delAnsw = (e) => {
-		setNumArray(numArray.filter(number => (
+		console.log(e.target.value)
+		setNumArray([numArray.filter(number => (
 			number !== e.target.value
-		)));
+		))]);
 	}
 	
 	const renderAnswers = (numArray) => {
