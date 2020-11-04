@@ -15,15 +15,10 @@ const ClosedQuestion = () => {
 		setNumArray([...numArray, numOfAns]);
 	}
 
-	const delAnsw = (e) => {
-		console.log(e.target.value)
-		setNumArray([numArray.filter(number => (
-			number !== e.target.value
-		))]);
-	}
+	
 	
 	const renderAnswers = (numArray) => {
-		const  answers = numArray.map( (i) => <CQAnswer key={i} num={i} delAnsw={delAnsw} />);
+		const  answers = numArray.map( (i) => <CQAnswer numArray={numArray} key={i} setNumArray={setNumArray} num={i}/>);
 		return answers;
 	}
 

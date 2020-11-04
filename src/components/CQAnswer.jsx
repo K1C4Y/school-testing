@@ -4,11 +4,17 @@ import FormControl from 'react-bootstrap/FormControl';
 import FormLabel from 'react-bootstrap/FormLabel';
 
 
-const CQAnswer = ({num, delAnsw}) =>{
+const CQAnswer = ({num, numArray, setNumArray}) =>{
 
 
-const delAns = (e) =>{
-		delAnsw(e);
+// const delAns = (e) =>{
+// 		delAnsw(e);
+// 	}
+
+	const deleteHendeler = () => {
+		setNumArray(numArray.filter(number => (
+			number !== num
+		)));
 	}
 
 	return (
@@ -16,7 +22,7 @@ const delAns = (e) =>{
 			<FormLabel>Answer text:</FormLabel>	
 			<FormControl type='textarea' placeholder='Answer'/>
 			<FormControl type='checkbox' label='Is correct'/>
-				<Button onClick={(e) => delAns(e)} value={num}>Delete answer</Button>
+				<Button onClick={deleteHendeler} >Delete answer </Button>
 		</div>	
 	)
 }
