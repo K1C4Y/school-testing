@@ -5,7 +5,6 @@ import FormLabel from 'react-bootstrap/FormLabel';
 import Button from 'react-bootstrap/Button';
 import CQAnswer from './CQAnswer';
 
-
 const ClosedQuestion = () => {
 	const [numOfAns, setNumOfAnd] = useState(1);
 	const [numArray,setNumArray] = useState([]);
@@ -15,10 +14,9 @@ const ClosedQuestion = () => {
 		setNumArray([...numArray, numOfAns]);
 	}
 
-	
-	
-	const renderAnswers = (numArray) => {
-		const  answers = numArray.map( (i) => <CQAnswer numArray={numArray} key={i} setNumArray={setNumArray} num={i}/>);
+	const renderAnswers = (numArray) => { 
+		const  answers = numArray.map( (i) =>(
+			<CQAnswer numArray={numArray} key={i} setNumArray={setNumArray} num={i}/>));
 		return answers;
 	}
 

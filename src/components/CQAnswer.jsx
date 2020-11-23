@@ -6,11 +6,6 @@ import FormLabel from 'react-bootstrap/FormLabel';
 
 const CQAnswer = ({num, numArray, setNumArray}) =>{
 
-
-// const delAns = (e) =>{
-// 		delAnsw(e);
-// 	}
-
 	const deleteHendeler = () => {
 		setNumArray(numArray.filter(number => (
 			number !== num
