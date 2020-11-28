@@ -1,19 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
+import { Button } from "react-bootstrap";
 import FormControl from "react-bootstrap/FormControl";
-import FormGroup from "react-bootstrap/FormGroup";
 import FormLabel from "react-bootstrap/FormLabel";
 
-class OpenQuestion extends Component {
-  render() {
-    return (
-      <div className="OpenQuestion">
-        <FormGroup>
-          <FormLabel>Question</FormLabel>
-          <FormControl type="textarea" placeholder="Enter Question" />
-        </FormGroup>
-      </div>
+const OpenQuestion = ({
+  num,
+  setNumOfOpenQuestionsArray,
+  numOfOpenQuestionsArray,
+}) => {
+  const deleteOpenQuestionHendeler = () => {
+    setNumOfOpenQuestionsArray(
+      numOfOpenQuestionsArray.filter((number) => number !== num)
     );
-  }
-}
+  };
+
+  return (
+    <div className="OpenQuestion">
+      <FormLabel>Question</FormLabel>
+      <FormControl type="textarea" placeholder="Enter Question" />
+      <Button onClick={deleteOpenQuestionHendeler}>Delete Question</Button>
+    </div>
+  );
+};
 
 export default OpenQuestion;

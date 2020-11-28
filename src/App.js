@@ -1,17 +1,17 @@
-import React from "react";
-// import Login from './components/Login.jsx';
-// import Register from './components/Register.jsx';
-// import OpenQuestion from './components/OpenQuestion.jsx';
-// import ClosedQuestion from './components/ClosedQuestion.jsx';
-// import TeacherCocpit from './components/TeacherCocpit.jsx'
-import Test from "./components/Test.jsx";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import StudentCocpit from "./components/StudentCocpit.jsx";
+import TeacherCocpit from "./components/TeacherCocpit.jsx";
+import CreateTest from "./components/CreateTest.jsx"
 function App() {
+  const [teacherLogged, setTeacherLogged] = useState(false);
+  const [studentLogged, setStudentLogged] = useState(true);
+	
   return (
-    <div>
-      <h1>Hello world</h1>
-      <Test />
+    <div id="AppComponent">
+       {/* {studentLogged ? <StudentCocpit /> : null} */}
+       {/* {teacherLogged ? <TeacherCocpit /> : null} */}
+				<CreateTest/>
     </div>
   );
 }
