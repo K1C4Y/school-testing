@@ -7,8 +7,8 @@ const StNavigation = () => {
         <Navbar.Brand href="#home">Test It !!!</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav>
-          <Nav.Link>Test to do</Nav.Link>
-          <Nav.Link>Tests done</Nav.Link>
+          <Nav.Link>Your tests</Nav.Link>
+          <Nav.Link>Complete new test</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link>Logout</Nav.Link>
