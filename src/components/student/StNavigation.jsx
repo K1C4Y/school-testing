@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 
-const StNavigation = ({setTestCode,setTestsCompleted}) => {
+const StNavigation = ({setTestCode,setTestsCompleted,logOut}) => {
   const newTest = () => {
     setTestCode(true);
     setTestsCompleted(false);
@@ -18,7 +18,7 @@ const StNavigation = ({setTestCode,setTestsCompleted}) => {
         <Nav>
           <Nav.Link onClick={allTests}>Your tests</Nav.Link>
           <Nav.Link onClick={newTest}>Complete new test</Nav.Link>
-          <Nav.Link>Logout</Nav.Link>
+          <Nav.Link onClick={logOut}>Logout</Nav.Link>
         </Nav>
       </Navbar>
     </div>

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import Table from "react-bootstrap/Table";
+
 const TestsDone = () => {
   const [testsDone, setTestsDone] = useState([
-    { testName : "tn1", grade : 5 },
-    { testName : "tn2", grade : 3 },
+    { testName: "tn1", grade: 5 },
+    { testName: "tn2", grade: 3 },
   ]);
   const renderTests = (testsDone) => {
     const tests = testsDone.map((test) => (
-      <li>
-        Test: {test.testName} Grade: {test.grade}
-      </li>
+      <tr>
+        <td>{test.testName}</td>
+        <td>{test.grade}</td>
+      </tr>
     ));
     console.log(tests);
     return tests;
@@ -16,7 +19,15 @@ const TestsDone = () => {
 
   return (
     <div id="testsDone">
-      <ul>{renderTests(testsDone)}</ul>
+      <Table stdiped bordered hover size="sm" >
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Grade</td>
+          </tr>
+        </thead>
+        <tbody>{renderTests(testsDone)}</tbody>
+      </Table>
     </div>
   );
 };

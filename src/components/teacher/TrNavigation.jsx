@@ -1,17 +1,26 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
-const TrNavigation = () => {
+
+const TrNavigation = ({setTTGB,setCTB,logOut}) => {
+
+  const createTest = () => {
+   setCTB(true) 
+   setTTGB(false) 
+}
+
+  const testsToGrade = () => {
+   setCTB(false) 
+   setTTGB(true) 
+}
+
   return (
     <div id="TrNavigation">
       <Navbar bg="light" expand="lg">
         <Navbar.Brand href="#home">Test It !!!</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Nav>
-          <Nav.Link>Create Test</Nav.Link>
-          <Nav.Link>Tests To Grade</Nav.Link>
-        </Nav>
-        <Nav>
-          <Nav.Link>Logout</Nav.Link>
+          <Nav.Link onClick={createTest}>Create Test</Nav.Link>
+          <Nav.Link onClick={testsToGrade}>Tests To Grade</Nav.Link>
+          <Nav.Link onClick={logOut}>Logout</Nav.Link>
         </Nav>
       </Navbar>
     </div>

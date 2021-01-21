@@ -1,16 +1,17 @@
 import React, { useState } from "react";
-import ComplTest from './ComplTest.jsx';
+import ComplTest from "../student/ComplTest.jsx";
+import Table from "react-bootstrap/Table"
 
 const TestTG = () => {
-  const [Tests, setTests] = useState([
-    { name: "Ekonometria", studentName: "Zbyszek", reviewed: false },
-    { name: "Informatyka", studentName: "Leszek", reviewed: true },
+  const [testDesc, setTests] = useState([
+    { name: "Ekonometria", studentName: "Zbyszek", reviewed: false, id: 1 },
+    { name: "Inkormatyka", studentName: "Leszek", reviewed: true, id: 2 },
   ]);
-  const [multipleTestMode, setMultipleTestMode] = useState(false);
-  const renderTests = () => {
-    let i = -1;
-    const tests = Tests.map((test) => (
-      <tr key={i++}>
+  const [multipleTestMode, setMultipleTestMode] = useState(true);
+
+  const renderTests = (testDesc) => {
+    const tests = testDesc.map((test) => (
+      <tr key={test.id}>
         <td>{test.name}</td>
         <td>{test.studentName}</td>
         <td>{test.reviewed}</td>
@@ -19,21 +20,30 @@ const TestTG = () => {
     return tests;
   };
 
-  const renderTable = () => {
-    <table>
-      <tr>
-        <td>Test Name</td>
-        <td>Student Name</td>
-        <td>Reviewd</td>
-      </tr>
-      {renderTests()}
-    </table>;
+  const renderTable = (testDesc) => {
+    const massage = (
+      <Table striped bordered hover>
+        <tr>
+          <td>Test Name</td>
+          <td>Student Name</td>
+          <td>Reviewd</td>
+        </tr>
+        {renderTests(testDesc)}
+      </Table>
+    );
+    return massage
   };
+
   const renderTest = () => {
     setMultipleTestMode(false);
     return <ComplTest />;
   };
+
   return (
-    <div id="testTG">{multipleTestMode ? renderTable() : renderTest()}</div>
+    <div id="testTG">
+      {multipleTestMode ? renderTable(testDesc) : renderTest()}
+    </div>
   );
 };
+
+export default TestTG;
