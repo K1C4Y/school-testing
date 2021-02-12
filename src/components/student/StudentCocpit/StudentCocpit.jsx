@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import StNavigation from "./StNavigation.jsx";
-import TestCode from "./TestCode.jsx";
-import TestsDone from "./TestsDone.jsx";
+import StNavigation from "../StNavigation/StNavigation.jsx";
+import TestCode from "../TestCode/TestCode.jsx";
+import TestsDone from "../TestsDone/TestsDone.jsx";
 
 const StudentCocpit = ({logOut}) => {
   const [testCode, setTestCode] = useState(true);

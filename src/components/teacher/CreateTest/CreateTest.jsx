@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormLabel, FormControl } from "react-bootstrap";
-import ClosedQuestion from "./ClosedQuestion.jsx";
-import OpenQuestion from "./OpenQuestion.jsx";
+import ClosedQuestion from "../ClosedQuestion/ClosedQuestion.jsx";
+import OpenQuestion from "../OpenQuestion/OpenQuestion.jsx";
 
 const CreateTest = () => {
   const [numOfClosedQuestions, setNumOfClosedQuestions] = useState(null);

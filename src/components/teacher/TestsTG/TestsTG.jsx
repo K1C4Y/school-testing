@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import ComplTest from "../student/CompletedTest.jsx";
-import Table from "react-bootstrap/Table"
+import CompletedTest from "../../student/CompletedTest/CompletedTest.jsx";
+import Table from "react-bootstrap/Table";
 
-
+const TestsTG = () => {
   const [testDesc, setTests] = useState([
-    { name: "Ekonometria", studentName: "Zbyszek", reviewed: false, id: 1 },
+    { name: " Ekonometria", studentName: "Zbyszek", reviewed: false, id: 1 },
     { name: "Inkormatyka", studentName: "Leszek", reviewed: true, id: 2 },
   ]);
   const [multipleTestMode, setMultipleTestMode] = useState(true);
 
-
+  const renderTest = (id) => {
+    setMultipleTestMode(false);
+    return <CompletedTest />;
+  };
 
   const renderTests = (testDesc) => {
     const tests = testDesc.map((test) => (
-      <tr key={test.id} onClick={renderTest(id)}>
+      <tr key={test.id} >
         <td>{test.name}</td>
         <td>{test.studentName}</td>
         <td>{test.reviewed}</td>
@@ -33,13 +36,9 @@ import Table from "react-bootstrap/Table"
         {renderTests(testDesc)}
       </Table>
     );
-    return massage
+    return massage;
   };
 
-  const renderTest = (id) => {
-    setMultipleTestMode(false);
-    return <CompletedTest />;
-  };
 
   return (
     <div id="testTG">
@@ -48,4 +47,4 @@ import Table from "react-bootstrap/Table"
   );
 };
 
-export default TestTG;
+export default TestsTG;

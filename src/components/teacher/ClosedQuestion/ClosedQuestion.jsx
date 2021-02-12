@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormControl from "react-bootstrap/FormControl";
 import FormLabel from "react-bootstrap/FormLabel";
 import Button from "react-bootstrap/Button";
-import CQAnswer from "./CQAnswer";
+import CQAnswer from "../CQAnswer/CQAnswer";
 
 const ClosedQuestion = ({ num, setNumOfClosedQuestionsArray,numOfClosedQuestionsArray }) => {
   const [numOfAns, setNumOfAnd] = useState(1);

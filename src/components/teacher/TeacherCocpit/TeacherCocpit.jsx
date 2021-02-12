@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import CreateTest from "./CreateTest.jsx";
-import TrNavivgation from "./TrNavigation.jsx";
-import TestTG from "./TestsTG.jsx";
+import CreateTest from "../CreateTest/CreateTest.jsx";
+import TrNavivgation from "../TrNavigation/TrNavigation.jsx";
+import TestTG from "../TestsTG/TestsTG.jsx";
 
 const TeacherCocpit = ({ logOut }) => {
   const [createTestBool, setCTB] = useState(false);

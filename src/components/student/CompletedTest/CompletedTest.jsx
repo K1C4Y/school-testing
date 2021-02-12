@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import FormGroup from "react-bootstrap/FormGroup";
 import FormControl from "react-bootstrap/FormControl";
 
-const [test, setTest] = useState({});
-const [testAnswer, setTestAnswer] = useState({});
-
 const CompletedTest = (id) => {
+  const [test, setTest] = useState({});
+  const [testAnswer, setTestAnswer] = useState({});
   const setData = "placeholder for async request " + id;
-  setData;
   const renderComplTest = (test, testAnswer) => {
-    const questions = test.questions.map((question) => <p>{question}</p>);
+    const questions = test.questions.map((question) => {
+      return <p>{question}</p>;
+    });
     const answers = testAnswer.answers.map((answer) => <p>{answer}</p>);
     const block = [];
+    let i = 0;
     while (i < questions.lenght) {
       block.push(questions[i]);
-      blick.push(answers[i]);
+      block.push(answers[i]);
     }
     return block;
   };

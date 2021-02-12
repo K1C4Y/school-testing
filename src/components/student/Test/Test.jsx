@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Question from './Question.jsx';
-import FormGroup from 'react-bootstrap/FormGroup';
-const ComplTest = () => {
+import { FormGroup } from "react-bootstrap";
+import Question from "../Question/Question.jsx";
+const Test = () => {
   const [testData, setTestData] = useState({
     name: "Ekonometria kolo",
     questions: [
@@ -26,7 +26,7 @@ const ComplTest = () => {
     return questions;
   };
   return (
-    <div id="complTest">
+    <div id="test">
       <h1>{testData.name}</h1>
       <br />
       <FormGroup>
@@ -37,4 +37,4 @@ const ComplTest = () => {
   );
 };
 
-export default ComplTest;
+export default Test;
